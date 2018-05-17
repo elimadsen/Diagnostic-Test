@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="AUTHOR" content="Marcel Bresink" />
+<title>SystemLoad Hilfe</title>
+<link href="../../shrd/mbshelp3.css" rel="stylesheet" type="text/css" />
+<script src="../../shrd/mbskeys.js" type="text/javascript"></script>
+</head>
+<body onload="expandKeySequences()">
+<p id="bannerbox"><a href="../index.html" id="bannercontentleft">Start</a></p>
+<div id="wrapper">
+<h2 id="arbeitenmitdemprogramm">Arbeiten mit dem Programm</h2>
+
+<h3 id="nutzungshinweise">Nutzungshinweise</h3>
+
+<!-- \label{0100-Usage.html}-->
+
+<h4 id="grundlegenderbetrieb">Grundlegender Betrieb</h4>
+
+<p>Um das Programm zu benutzen, klicken Sie dessen Symbol an, geben Sie die Anzahl Prozessoren, die gesteuert werden soll, in das Feld <strong>Anzahl zu belastende Prozessoren</strong> ein und stellen Sie die gewünschte Last mit dem Schieberegler ein.</p>
+
+<h4 id="wiekannichprfenobsystemloadarbeitet">Wie kann ich prüfen, ob SystemLoad arbeitet?</h4>
+
+<p>Starten Sie das Programm <strong>Aktivitätsanzeige</strong>, das Bestandteil jedes OS X-Systems ist. Sie können irgendeine der möglichen Überwachungsanzeigen auswählen, z.B. <strong>Fenster &gt; Balken für CPU-Auslastung &gt; Horizontal</strong>. Die Last für jeden Prozessor wird dann angezeigt. Auf der Kommandozeile können Sie andere Tools wie <strong>top</strong> oder <strong>ps</strong> verwenden, um die CPU-Aktivität zu überwachen.</p>
+
+<h4 id="warumkanndietatschlichecpu-lasthherseinalsdiemitsystemloadeingestellte">Warum kann die tatsächliche CPU-Last höher sein, als die mit SystemLoad eingestellte?</h4>
+
+<p>Das Programm kann nur die Last steuern, die es selbst erzeugt. Falls Sie andere Programme laufen haben, können diese Anwendungen die Prozessoren ebenso belasten. Da die Funktionsweise von OS X garantiert, dass kein Programm (außer dem Betriebssystemkern selbst) einem anderen Programm Prozessorleistung &#8222;stehlen&#8220; kann, können Sie SystemLoad keine Last erzeugen lassen, die geringer ist, als die momentane Gesamtlast auf Ihrem Rechner. Die mit dem Schieberegler eingestellte Last ist die zusätzliche Belastung der Prozessoren.</p>
+
+<h4 id="warumstimmtdielastdievoneinemmonitorprogrammangezeigtwirdnichtimmerexaktmitderinsystemloadeingestelltenlastberein">Warum stimmt die Last, die von einem Monitorprogramm angezeigt wird, nicht immer exakt mit der in SystemLoad eingestellten Last überein?</h4>
+
+<p>Eine Vielzahl von Faktoren hat Einfluss auf die tatsächliche Lastanzeige: Programme zur Anzeige der Prozessoraktivität müssen die Last innerhalb eines bestimmten Zeitintervalls ausmessen. Da OS X ständig die Prozessorzeit abhängig von der momentanen Gesamtlast neu zuweist, kann es passieren, dass SystemLoad innerhalb des Messintervalls wechselnde Anteile der gesamten Prozessorleistung erhalten hat. Obwohl SystemLoad versucht, eine genaue Last im System zu erzeugen, können andere Ereignisse dazu führen, dass die Messung ungenau wird. Dies gilt besonders für Systeme mit mehreren CPUs, da OS X entscheiden kann, das Programm während des Messintervalls auf unterschiedliche Prozessoren zu platzieren. So kann eine definierte Belastung von 50 Prozent für einen Einzelprozessor als 60 Prozent Last auf Prozessor A und 40 Prozent Last auf Prozessor B in einem Zweiprozessorsystem angezeigt werden.</p>
+
+<p>OS X ist Moment nicht in der Lage, die &#8222;Prozessoraffinität&#8220; zu steuern, eine Funktion, die in manchen Betriebssystemen vorhanden ist. Diese Funktion würde es erlauben, ein bestimmtes Programm an einen bestimmten Prozessor zu binden, um zu verhindern, dass das Betriebssystem den laufenden Prozess von einer CPU auf eine andere verschiebt. Das Fehlen dieser Funktion bedeutet für alltägliche Arbeiten keine Einschränkung, aber führt dazu, dass die Lastanzeige auf Mehr-CPU-Systemen zwischen den Prozessoren schwankt.</p>
+
+<p>Um eine so genaue Belastung wie möglich zu erzeugen, sollten Sie andere laufende Programme beenden.</p>
+
+<h4 id="kannsystemloadirgendwelcheschdenverursachen">Kann SystemLoad irgendwelche Schäden verursachen?</h4>
+
+<p>Nein, SystemLoad ist ein normales Programm, das Ihren Rechner rechnen lässt. Genau hierzu wurde Ihr Macintosh gebaut. Das einzig besondere an SystemLoad ist, dass es genau steuern kann, wie viele Berechnungen wann stattfinden. Dies kann keinerlei Schäden an einem funktionierenden System auslösen.</p>
+
+<p>Natürlich wurde SystemLoad dazu entwickelt, Hardware-Probleme aufdecken zu können. Das heißt falls Ihre Hardware bereits defekt ist, wird SystemLoad höchstwahrscheinlich eine Fehlersituation auslösen. Falls beispielsweise das Kühlsystem nicht richtig arbeitet und Sie maximale Last im System erzeugen, könnte Ihr Mac sich automatisch abschalten, weil er die kritische Temperaturgrenze überschreitet.</p>
+
+<h4 id="waspassiertwennichdiebetriebsartimunterenteildesfenstersumschalte">Was passiert, wenn ich die Betriebsart im unteren Teil des Fensters umschalte?</h4>
+
+<p>Sobald Sie den Knopf <strong>Versuchen, eine Tonleiter auf der Spannungsversorgung zu spielen</strong> drücken, versucht das Programm, die Last auf den Prozessoren gemäß eines bestimmten Musters zu verändern. Dieses Muster entspricht den Frequenzen einer C-Dur-Tonleiter zwischen den Noten C6 und C7. Bei Prozessoren, die viel Leistung aufnehmen, führt dies dazu, dass der von den Prozessoren aufgenommene Strom nach dem gleichen Muster variiert. Aufgrund der niedrigen Versorgungsspannungen moderner Prozessoren sind die Stromlastwechsel enorm. Der Prozessor könnte beispielsweise bei niedriger Last 6 A, bei Volllast 35 A Strom ziehen und jede Millisekunde zwischen diesen beiden Werten wechseln. Bestimmte Bauteile im Netzteil oder in den Spannungsregeleinheiten für die Prozessoren werden durch diese Lastwechsel zum Schwingen in der gleichen Frequenz angeregt. Bei einigen Computermodellen werden diese Änderungen hörbar.</p>
+
+<p>Falls Sie nichts hören, nachdem Sie die &#8222;Tonleiterfunktion&#8220; eingeschaltet haben, bestätigt dies, dass Ihr Computer nicht von Schwingungsproblemen in seiner Spannungsversorgung betroffen ist.</p>
+
+<p>Es könnte bereits sein, dass Sie ein Zwitschergeräusch hören, nachdem das Programm gestartet wurde und die Last nicht bei 100 % liegt.</p>
+
+<blockquote>
+<p>Solche Zwitschergeräusche sind lästig, weisen aber nicht auf einen eigentlichen Defekt hin.</p>
+</blockquote>
+</div>
+</body>
+</html>
