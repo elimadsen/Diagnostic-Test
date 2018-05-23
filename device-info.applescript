@@ -38,3 +38,32 @@ global deviceFusionStatus -- SPHardwareRAIDDataType? -- SPStorageDataType and SP
 -- not sure
 global deviceHousingColor -- White, Black, Aluminum, Space Gray, etc.
 global deviceCarrier -- T-Mobile, Verizon, AT&T, or Sprint
+
+global SPHardwareDataType, SPHardwareRAIDDataType, SPStorageDataType, SPMemoryDataType, SPDisplaysDataType
+
+
+on getInfo()
+
+    set {SPHardwareDataType, SPHardwareRAIDDataType, SPStorageDataType, SPMemoryDataType, SPDisplaysDataType} to {"SPHardwareDataType", "SPHardwareRAIDDataType", "SPStorageDataType", "SPMemoryDataType", "SPDisplaysDataType"}
+
+    set systemProfilerList to {SPHardwareDataType, SPHardwareRAIDDataType, SPStorageDataType, SPMemoryDataType, SPDisplaysDataType}
+
+    repeat with currentSystemProfiler in systemProfilerList
+    
+        set currentSystemProfiler to do shell script "system_profiler " & currentSystemProfiler
+
+    end repeat
+
+end getInfo
+
+getInfo()
+
+if SPHardwareRAIDDataType is not "SPHardwareRAIDDataType" then
+
+    display dialog "Yes"
+
+else
+
+    display dialog "No"
+
+end if
