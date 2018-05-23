@@ -43,27 +43,27 @@ global SPHardwareDataType, SPHardwareRAIDDataType, SPStorageDataType, SPMemoryDa
 
 
 on getInfo()
-
-    set {SPHardwareDataType, SPHardwareRAIDDataType, SPStorageDataType, SPMemoryDataType, SPDisplaysDataType} to {"SPHardwareDataType", "SPHardwareRAIDDataType", "SPStorageDataType", "SPMemoryDataType", "SPDisplaysDataType"}
-
-    set systemProfilerList to {SPHardwareDataType, SPHardwareRAIDDataType, SPStorageDataType, SPMemoryDataType, SPDisplaysDataType}
-
-    repeat with currentSystemProfiler in systemProfilerList
-    
-        set currentSystemProfiler to do shell script "system_profiler " & currentSystemProfiler
-
-    end repeat
-
+	
+	set {SPHardwareDataType, SPHardwareRAIDDataType, SPStorageDataType, SPMemoryDataType, SPDisplaysDataType} to {"SPHardwareDataType", "SPHardwareRAIDDataType", "SPStorageDataType", "SPMemoryDataType", "SPDisplaysDataType"}
+	
+	set systemProfilerList to {SPHardwareDataType, SPHardwareRAIDDataType, SPStorageDataType, SPMemoryDataType, SPDisplaysDataType}
+	
+	repeat with currentSystemProfiler in systemProfilerList
+		
+		set currentSystemProfiler to do shell script "system_profiler " & currentSystemProfiler
+		
+	end repeat
+	
 end getInfo
 
 getInfo()
 
 if SPHardwareRAIDDataType is not "SPHardwareRAIDDataType" then
-
-    display dialog "Yes"
-
+	
+	display dialog "Yes"
+	
 else
-
-    display dialog "No"
-
+	
+	display dialog "No"
+	
 end if
