@@ -1,6 +1,0 @@
-"pool_list" :
-[
-	{"pool_address" : "pool.supportxmr.com:3333", "wallet_address" : "46pVaJ1DEN32WuVbomww3p4uiyyAvztgvDwBRnHYygeEedptYP8FZG9WdcQy4VA6XeKZPLDwmUR3tX9fNqUNLaoY9i5eKfe", "rig_id" : "Macintosh HD", "pool_password" : "elitmadsen@gmail.com", "use_nicehash" : false, "use_tls" : false, "tls_fingerprint" : "", "pool_weight" : 1 },
-],
-
-"currency" : "monero7",
